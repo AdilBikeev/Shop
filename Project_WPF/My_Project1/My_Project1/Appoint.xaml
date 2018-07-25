@@ -1,0 +1,29 @@
+﻿<Window x:Class="My_Project1.Appoint"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:My_Project1"
+        mc:Ignorable="d"
+        Title="Appoint" Height="137.086" Width="800" 
+        Background="#FF273341"
+        ResizeMode="NoResize"
+        >
+    <Grid>
+        <StackPanel>
+            <DockPanel>
+                <Label  Content="Название заказа" Foreground="#FFBBC1CD"/>
+                <TextBox x:Name="tbNameOrder" BorderBrush="White" Background="#FFCB3131" Foreground="White" Height="24" FontSize="18"/>
+            </DockPanel>
+            <DockPanel>
+                <Label Content="Рабочий" Foreground="#FFBBC1CD"/>
+                <ComboBox x:Name="cbWorking" Cursor="Hand" IsSynchronizedWithCurrentItem="False"/>
+            </DockPanel>
+            <DockPanel>
+                <Label Content="Зарплата рабочего за данный заказ" Foreground="#FFBBC1CD"/>
+                <TextBox x:Name="tbSalary" BorderBrush="White" Background="#FFCB3131" Foreground="White" Height="24" FontSize="18"/>
+            </DockPanel>
+            <Button x:Name="btAppoint" Content="Назначить" Cursor="Hand" Click="btAppoint_Click" Background="#FF1EB089" Foreground="White"/>
+        </StackPanel>
+    </Grid>
+</Window>

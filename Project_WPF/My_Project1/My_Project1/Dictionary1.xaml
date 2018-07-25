@@ -1,0 +1,30 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:My_Project1">
+                    <Style x:Key="lbStyle">
+                        <Setter Property="Control.Width" Value="114"/>
+                        <Setter Property="Control.Height" Value="60"/>
+                        <Setter Property="Control.Foreground" Value="White"/>
+                        <Setter Property="Control.FontFamily" Value="Ravie"/>
+                        <Setter Property="Control.FontWeight" Value="Bold"/>
+                    </Style>
+    
+                    <Style x:Key="btStyle_1">
+                    <Setter Property="Control.FontSize" Value="40"/>
+                        <Setter Property="Control.Cursor" Value="Hand"/>
+                        <Setter Property="Control.Background" Value="#FF06F091"/>
+                        <Setter Property="Control.Foreground" Value="White"/>
+                    </Style>
+
+                    <Style x:Key="tcStyle">
+                        <Setter Property="Control.FontSize" Value="18"/>
+                        <Setter Property="Control.Margin" Value="-2,-2,-2,0"/>
+                        <Setter Property="Control.Foreground" Value="#FF61B242"/>
+                        <Setter Property="Control.Cursor" Value="Hand"/>
+                    </Style>
+    
+                    <Style x:Key="dgStyle">
+                        <Setter Property="Control.FontWeight" Value="Bold"/>
+                        <Setter Property="Control.Foreground" Value="#FF1E2C35"/>
+                    </Style>
+</ResourceDictionary>

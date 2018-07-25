@@ -1,0 +1,62 @@
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\bin\Release\My_Project1.exe.config
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\bin\Release\My_Project1.exe
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\bin\Release\My_Project1.pdb
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\bin\Release\Google.Protobuf.dll
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\bin\Release\MySql.Data.dll
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\bin\Release\Google.Protobuf.xml
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\bin\Release\MySql.Data.xml
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Release\Appoint.g.cs
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Release\FormalizeWin.g.cs
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Release\For_Personal.g.cs
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Release\MainWindow.g.cs
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Release\Shop.g.cs
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Release\App.g.cs
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Release\My_Project1_MarkupCompile.cache
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Release\My_Project1_MarkupCompile.lref
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Release\Appoint.baml
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Release\Dictionary1.baml
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Release\FormalizeWin.baml
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Release\For_Personal.baml
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Release\MainWindow.baml
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Release\Shop.baml
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Release\My_Project1.g.resources
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Release\My_Project1.Properties.Resources.resources
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Release\My_Project1.csproj.GenerateResource.cache
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Release\My_Project1.csproj.CoreCompileInputs.cache
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Release\My_Project1.csproj.CopyComplete
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Release\My_Project1.exe
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Release\My_Project1.pdb
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Release\My_Project1.csprojAssemblyReference.cache
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Release\Help.g.cs
+D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Release\Help.baml
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\bin\Release\My_Project1.exe.config
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\bin\Release\My_Project1.exe
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\bin\Release\My_Project1.pdb
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\bin\Release\Google.Protobuf.dll
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\bin\Release\MySql.Data.dll
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\bin\Release\Google.Protobuf.xml
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\bin\Release\MySql.Data.xml
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\obj\Release\My_Project1.csprojAssemblyReference.cache
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\obj\Release\Appoint.g.cs
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\obj\Release\FormalizeWin.g.cs
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\obj\Release\For_Personal.g.cs
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\obj\Release\Help.g.cs
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\obj\Release\MainWindow.g.cs
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\obj\Release\Shop.g.cs
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\obj\Release\App.g.cs
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\obj\Release\My_Project1_MarkupCompile.cache
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\obj\Release\My_Project1_MarkupCompile.lref
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\obj\Release\Appoint.baml
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\obj\Release\Dictionary1.baml
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\obj\Release\FormalizeWin.baml
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\obj\Release\For_Personal.baml
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\obj\Release\Help.baml
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\obj\Release\MainWindow.baml
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\obj\Release\Shop.baml
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\obj\Release\My_Project1.g.resources
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\obj\Release\My_Project1.Properties.Resources.resources
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\obj\Release\My_Project1.csproj.GenerateResource.cache
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\obj\Release\My_Project1.csproj.CoreCompileInputs.cache
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\obj\Release\My_Project1.csproj.CopyComplete
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\obj\Release\My_Project1.exe
+D:\YandexDisk\Мои проекты\Project_WPF\My_Project1\My_Project1\obj\Release\My_Project1.pdb
