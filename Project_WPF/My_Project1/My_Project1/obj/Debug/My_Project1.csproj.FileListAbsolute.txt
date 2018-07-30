@@ -28,3 +28,32 @@ D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Debug\Appoint.g.
 D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Debug\Appoint.baml
 D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Debug\Help.g.cs
 D:\ЯП\C#\Repozitories\Project_WPF\My_Project1\My_Project1\obj\Debug\Help.baml
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\bin\Debug\My_Project1.exe.config
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\bin\Debug\My_Project1.exe
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\bin\Debug\My_Project1.pdb
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\bin\Debug\Google.Protobuf.xml
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\bin\Debug\MySql.Data.xml
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\My_Project1.csprojAssemblyReference.cache
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\Appoint.g.cs
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\FormalizeWin.g.cs
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\For_Personal.g.cs
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\Help.g.cs
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\MainWindow.g.cs
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\Shop.g.cs
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\App.g.cs
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\My_Project1_MarkupCompile.cache
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\My_Project1_MarkupCompile.lref
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\Appoint.baml
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\Dictionary1.baml
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\FormalizeWin.baml
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\For_Personal.baml
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\Help.baml
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\MainWindow.baml
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\Shop.baml
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\My_Project1.g.resources
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\My_Project1.Properties.Resources.resources
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\My_Project1.csproj.GenerateResource.cache
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\My_Project1.csproj.CoreCompileInputs.cache
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\My_Project1.csproj.CopyComplete
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\My_Project1.exe
+C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\My_Project1.pdb

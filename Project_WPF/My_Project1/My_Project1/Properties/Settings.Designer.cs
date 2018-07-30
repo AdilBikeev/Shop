@@ -26,7 +26,7 @@ namespace My_Project1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user=newuser;database=shop;password=password;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=%;user=newuser;database=shop;password=Apple2018;")]
         public string ConnString {
             get {
                 return ((string)(this["ConnString"]));
@@ -35,7 +35,7 @@ namespace My_Project1.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user=newuser;database=my_company;password=password;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=%;user=newuser;database=my_company;password=Apple2018;")]
         public string CoonStringPersonal {
             get {
                 return ((string)(this["CoonStringPersonal"]));
