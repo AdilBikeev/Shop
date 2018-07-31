@@ -26,7 +26,7 @@ namespace My_Project1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=172.16.80.228;user=username;database=shop;password=password;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=172.16.80.228;user=username;database=shop;port=3306;password=password;")]
         public string ConnString {
             get {
                 return ((string)(this["ConnString"]));
@@ -36,7 +36,8 @@ namespace My_Project1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=172.16.80.228;user=username;database=my_company;password=password;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=172.16.80.228;user=username;database=my_company;port=3306;password=passwor" +
+            "d;")]
         public string CoonStringPersonal {
             get {
                 return ((string)(this["CoonStringPersonal"]));
