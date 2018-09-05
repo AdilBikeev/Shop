@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище ShopModelContainer" CdmEntityContainer="ShopEntities2">
+    <EntitySetMapping Name="fomralize_order">
+      <EntityTypeMapping TypeName="ShopModel.fomralize_order">
+        <MappingFragment StoreEntitySet="fomralize_order">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name_order" ColumnName="name order" />
+          <ScalarProperty Name="FIO" ColumnName="FIO" />
+          <ScalarProperty Name="vk" ColumnName="vk" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="working_fio" ColumnName="working_fio" />
+          <ScalarProperty Name="progress_order" ColumnName="progress_order" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="order">
+      <EntityTypeMapping TypeName="ShopModel.order">
+        <MappingFragment StoreEntitySet="order">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name_subject" ColumnName="name_subject" />
+          <ScalarProperty Name="ID_subject" ColumnName="ID_subject" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="run_time" ColumnName="run_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subject_order">
+      <EntityTypeMapping TypeName="ShopModel.subject_order">
+        <MappingFragment StoreEntitySet="subject_order">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

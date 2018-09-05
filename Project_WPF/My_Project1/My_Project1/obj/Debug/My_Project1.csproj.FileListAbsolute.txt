@@ -57,3 +57,38 @@ C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_
 C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\My_Project1.csproj.CopyComplete
 C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\My_Project1.exe
 C:\Users\Адиль\Desktop\пробник для удаления\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\My_Project1.pdb
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\My_Project1.csprojAssemblyReference.cache
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\Window\Главнео окно\MainWindow.g.cs
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\App.g.cs
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\My_Project1_Content.g.cs
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\My_Project1_MarkupCompile.cache
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\My_Project1_MarkupCompile.lref
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\My_Project1.exe
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\My_Project1.pdb
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\Window\Для персонала\Appoint.g.cs
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\Window\Для заказчиков\FormalizeWin.g.cs
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\Window\Для персонала\For_Personal.g.cs
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\Window\Help.g.cs
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\Window\Для заказчиков\Shop.g.cs
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\bin\Debug\My_Project1.exe.config
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\bin\Debug\My_Project1.exe
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\bin\Debug\My_Project1.pdb
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\bin\Debug\EntityFramework.dll
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\bin\Debug\EntityFramework.SqlServer.dll
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\bin\Debug\EntityFramework.xml
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\bin\Debug\EntityFramework.SqlServer.xml
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\bin\Debug\Google.Protobuf.xml
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\bin\Debug\MySql.Data.xml
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\bin\Debug\ru\EntityFramework.resources.dll
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\Window\Для персонала\Appoint.baml
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\Dictionary1.baml
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\Window\Для заказчиков\FormalizeWin.baml
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\Window\Для персонала\For_Personal.baml
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\Window\Help.baml
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\Window\Главнео окно\MainWindow.baml
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\Window\Для заказчиков\Shop.baml
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\My_Project1.g.resources
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\My_Project1.Properties.Resources.resources
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\My_Project1.csproj.GenerateResource.cache
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\My_Project1.csproj.CoreCompileInputs.cache
+D:\del\Shop\Project_WPF\My_Project1\My_Project1\obj\Debug\My_Project1.csproj.CopyComplete

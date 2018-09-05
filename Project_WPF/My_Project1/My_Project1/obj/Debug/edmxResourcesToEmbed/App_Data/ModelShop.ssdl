@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище ShopModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="fomralize_order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name order" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FIO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="vk" Type="nvarchar(max)" />
+    <Property Name="phone" Type="int" />
+    <Property Name="comment" Type="nvarchar(max)" />
+    <Property Name="working_fio" Type="nvarchar(max)" />
+    <Property Name="progress_order" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_subject" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID_subject" Type="int" Nullable="false" />
+    <Property Name="price" Type="int" Nullable="false" />
+    <Property Name="run_time" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="subject_order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="subject" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__order__ID_subjec__1367E606">
+    <End Role="subject_order" Type="Self.subject_order" Multiplicity="1" />
+    <End Role="order" Type="Self.order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subject_order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="order">
+        <PropertyRef Name="ID_subject" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище ShopModelContainer">
+    <EntitySet Name="fomralize_order" EntityType="Self.fomralize_order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="order" EntityType="Self.order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="subject_order" EntityType="Self.subject_order" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__order__ID_subjec__1367E606" Association="Self.FK__order__ID_subjec__1367E606">
+      <End Role="subject_order" EntitySet="subject_order" />
+      <End Role="order" EntitySet="order" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

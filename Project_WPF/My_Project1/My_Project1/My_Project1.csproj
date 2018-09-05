@@ -13,6 +13,21 @@
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -37,6 +52,12 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.5.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -52,6 +73,8 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -71,24 +94,48 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Appoint.xaml.cs">
+    <Compile Include="Window\Для персонала\Appoint.xaml.cs">
       <DependentUpon>Appoint.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FormalizeWin.xaml.cs">
+    <Compile Include="App_Data\fomralize_order.cs">
+      <DependentUpon>ModelShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\ModelShop.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelShop.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\ModelShop.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\ModelShop.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelShop.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\order.cs">
+      <DependentUpon>ModelShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\subject_order.cs">
+      <DependentUpon>ModelShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Window\Для заказчиков\FormalizeWin.xaml.cs">
       <DependentUpon>FormalizeWin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="For_Personal.xaml.cs">
+    <Compile Include="Window\Для персонала\For_Personal.xaml.cs">
       <DependentUpon>For_Personal.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Help.xaml.cs">
+    <Compile Include="Window\Help.xaml.cs">
       <DependentUpon>Help.xaml</DependentUpon>
     </Compile>
     <Compile Include="Order.cs" />
-    <Compile Include="Shop.xaml.cs">
+    <Compile Include="Window\Для заказчиков\Shop.xaml.cs">
       <DependentUpon>Shop.xaml</DependentUpon>
     </Compile>
     <Compile Include="Working.cs" />
-    <Page Include="Appoint.xaml">
+    <Page Include="Window\Для персонала\Appoint.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -96,19 +143,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FormalizeWin.xaml">
+    <Page Include="Window\Для заказчиков\FormalizeWin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="For_Personal.xaml">
+    <Page Include="Window\Для персонала\For_Personal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Help.xaml">
+    <Page Include="Window\Help.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Window\Главнео окно\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -116,11 +163,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Window\Главнео окно\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Shop.xaml">
+    <Page Include="Window\Для заказчиков\Shop.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -143,6 +190,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="App_Data\ModelShop.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelShop.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App_Data\ModelShop.edmx.diagram">
+      <DependentUpon>ModelShop.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -160,6 +214,34 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ImageSource\Назначение_заказа.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.1 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\ModelShop.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelShop.edmx</DependentUpon>
+      <LastGenOutput>ModelShop.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_Data\ModelShop.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelShop.edmx</DependentUpon>
+      <LastGenOutput>ModelShop.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
