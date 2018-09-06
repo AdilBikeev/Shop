@@ -21,7 +21,7 @@
                         <GroupBox Header="1) Добавление заказа в корзину" FontSize="30" Foreground="#FFFF6800">
                             <StackPanel>
                                 <TextBlock FontSize="15"><LineBreak/>Для добавления заказа в корзину достаточно 1 кликом ЛКМ нажать на выбраный вами заказ после чего<LineBreak/></TextBlock>
-                                <Image Source="ImageSource\Выбор_заказа.jpg" Stretch="Fill" Width="644" Height="238"/>
+                                <Image   Stretch="Fill" Width="644" Height="238" Source="/My_Project1;component/ImageSource/Корзина.jpg"/>
                                 <TextBlock FontSize="15">Рисунок 1<LineBreak/><LineBreak/>Затем у вас вылезет всплывающее окно на котором у вас спросят действительно ли вы хотите добавить данный заказ в корзину. В случаи подтверждения действий ваш заказ появится во вкладке 'Корзина'<LineBreak/></TextBlock>
                                 <TextBlock FontSize="15"><LineBreak/>Для удобства во вкладке 'Меню' имеется возможность ранжирвоать список заказов.Если вас интересует <LineBreak/>
                                 определенная тематика заказа, то её вы можете выбрать нажав на слово 'Все' и уже в выпадающем списке выбрать интересующую вас тематику<LineBreak/></TextBlock>
@@ -30,7 +30,7 @@
                         <GroupBox Header="2)Корзина" FontSize="30"  Foreground="#FFFF6800">
                             <StackPanel>
                                 <TextBlock FontSize="15"><LineBreak/> Во вкладке 'Корзина' у нас отображается список заказов, которые вы выбрали для покупки но еще не оформили окончательно(см. рисунок 2)<LineBreak/></TextBlock>
-                                <Image Source="ImageSource\Корзина.jpg" Stretch="Fill" Width="644" Height="238"/>
+                                <Image Source="/My_Project1;component/ImageSource/Выбор_заказа.jpg" Stretch="Fill" Width="644" Height="238"/>
                                 <TextBlock FontSize="15">Рисунок 2<LineBreak/><LineBreak/>Для начала работы следуют выбрать один из заказов из данного списка. Выбранный<LineBreak/>заказ будет подсвечиваться синим цветом
                             Далее вы можете либо удалть данный заказ, либо оформить на него нажав на соответствующие кнопки, расположенные над и под списком заказов<LineBreak/></TextBlock>
                             </StackPanel>
@@ -51,7 +51,7 @@
                             <StackPanel>
                                 <TextBlock FontSize="15"><LineBreak/>Для назначения работы над заказом соответствующему рабочему достаточно 1 кликом ЛКМ нажать на выбраный вами заказ<LineBreak/>
                                     у вас откроется окно назначения, где вы вводите нужные данные и жмете кнопку "Назначить"(см. рисунок 3)<LineBreak/></TextBlock>
-                                <Image Source="ImageSource\Назначение_заказа.jpg" Stretch="Fill" Width="644" Height="238"/>
+                                <Image  Stretch="Fill" Width="644" Height="238" Source="/My_Project1;component/ImageSource/Назначение_заказа.jpg"/>
                                 <TextBlock FontSize="15"><LineBreak/>Для удобства в окне "For_Personal" имеется возможность ранжирвоать список заказов.Если вас интересует <LineBreak/>
                                 определенная тематика заказа, то её вы можете выбрать нажав на слово 'Все' и уже в выпадающем списке выбрать интересующую вас тематику<LineBreak/></TextBlock>
                             </StackPanel>
