@@ -11,7 +11,7 @@ namespace My_Project1.App_Data
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class order
     {
         public int Id { get; set; }

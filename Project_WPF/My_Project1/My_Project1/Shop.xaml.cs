@@ -3,6 +3,7 @@ using System.Windows;
 using System.Collections.Generic;
 using My_Project1.App_Data;
 using System.Data.Entity;
+using System.Linq;
 
 namespace My_Project1
 {
@@ -11,18 +12,18 @@ namespace My_Project1
     /// </summary>
     public partial class Shop : Window
     {
-        public string[] Topic = new string[] { "Все", "Программирование", "Дискретная матемаитка", "Математический Анализ", "Линейная алгебра", "Информатика" };
-        public List<Order> order = new List<Order>();//заказы
+        public List<Order> orderCopy = new List<Order>();//заказы
         public List<Order> painer = new List<Order>();//корзина
         public bool flag = false;
+
+
+        ShopEntities2 shop;
 
         public Shop()
         {
             InitializeComponent();
 
-            ShopEntities2 shop = new ShopEntities2();//созадем экземпляр  модели
-            shop.order.Load();//загружаем информацию с базы данных
-            dgOrderTable.ItemsSource = shop.order;
+            shop = new ShopEntities2();//созадем экземпляр  модели
         }
 
         private string GetTableUseSubj()
@@ -66,46 +67,33 @@ namespace My_Project1
 
         public void ShowTableOrder()//выводит таблицу заказов
         {
-            if (order.Count != 0)
+            if (shop != null)
             {
-                order.Clear();
+
+
+                if (orderCopy.Count != 0)
+                {
+                    orderCopy.Clear();
+                }
+
+                string name_subject = "";
+                for (int i = 0; i < shop.order.Local.Count; i++)//пробегаемся по всем строкам таблицы
+                {
+
+                    foreach (subject_order item in shop.subject_order)
+                    {
+                        if (item.Id == shop.order.Local[i].ID_subject)
+                        {
+                            if (item.subject == cbSubject.)
+                            {
+                                name_subject = item.subject;
+                                orderCopy.Add(new Order(name_subject, shop.order.Local[i].name_subject, shop.order.Local[i].price, shop.order.Local[i].run_time));
+                            }
+                            break;
+                        }
+                    }
+                }
             }
-               
-                //try
-                //{
-                //    MySqlConnection conn1 = new MySqlConnection(My_Project1.Properties.Settings.Default.ConnString);
-                //    conn1.Open();
-                //    MySqlCommand command1 = new MySqlCommand(GetTableUseSubj(), conn1);
-
-
-                //    MySqlConnection conn2 = new MySqlConnection(My_Project1.Properties.Settings.Default.ConnString);
-                //    conn2.Open();
-                //    MySqlCommand command2 = new MySqlCommand("SELECT *FROM shop.subject_order", conn2);
-
-                
-                //    MySqlDataReader reader1 = command1.ExecuteReader();
-                //    while (reader1.Read())
-                //    {
-                //        MySqlDataReader reader2 = command2.ExecuteReader();
-                //        while (reader2.Read())
-                //        {
-                //            if (reader2[0].ToString() == reader1[2].ToString())
-                //            {
-                //                order.Add(new Order(reader2[1].ToString(), reader1[1].ToString(), (int)reader1[3], reader1[4].ToString()));
-                //                break;
-                //            }
-                //        }
-                //        reader2.Close();
-                //    }
-                //    conn1.Close();
-                //    conn2.Close();
-                //    reader1.Close();
-                //}
-                //catch (Exception exc)
-                //{
-                //    MessageBox.Show(exc.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                //}
-                
         }
         
         private void cbSubject_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
@@ -114,7 +102,7 @@ namespace My_Project1
             if(flag)
             {
                 dgOrderTable.ItemsSource = null;
-                dgOrderTable.ItemsSource = order;
+                dgOrderTable.ItemsSource = orderCopy;
             }
         }
 
@@ -122,8 +110,22 @@ namespace My_Project1
         {
             try
             {
-                dgOrderTable.ItemsSource = null;
-                dgOrderTable.ItemsSource = order;
+                shop.subject_order.Load();
+                shop.order.Load();//загружаем информацию с базы данных
+                string name_subject="";
+                for (int i = 0; i < shop.order.Local.Count; i++)//пробегаемся по всем строкам таблицы
+                {
+                    foreach(subject_order item in shop.subject_order)
+                    {
+                        if(item.Id == shop.order.Local[i].ID_subject)
+                        {
+                            name_subject = item.subject;
+                            orderCopy.Add(new Order(name_subject, shop.order.Local[i].name_subject, shop.order.Local[i].price, shop.order.Local[i].run_time));
+                            break;
+                        }
+                    }
+                }
+                dgOrderTable.ItemsSource = orderCopy;
                 flag = true;
             }
             catch (Exception exc)
