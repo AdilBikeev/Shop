@@ -13,6 +13,7 @@
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,7 +26,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -94,7 +94,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Window\Для персонала\Appoint.xaml.cs">
+    <Compile Include="Appoint.xaml.cs">
       <DependentUpon>Appoint.xaml</DependentUpon>
     </Compile>
     <Compile Include="App_Data\fomralize_order.cs">
@@ -121,21 +121,21 @@
     <Compile Include="App_Data\subject_order.cs">
       <DependentUpon>ModelShop.tt</DependentUpon>
     </Compile>
-    <Compile Include="Window\Для заказчиков\FormalizeWin.xaml.cs">
+    <Compile Include="FormalizeWin.xaml.cs">
       <DependentUpon>FormalizeWin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Window\Для персонала\For_Personal.xaml.cs">
+    <Compile Include="For_Personal.xaml.cs">
       <DependentUpon>For_Personal.xaml</DependentUpon>
     </Compile>
     <Compile Include="Window\Help.xaml.cs">
       <DependentUpon>Help.xaml</DependentUpon>
     </Compile>
     <Compile Include="Order.cs" />
-    <Compile Include="Window\Для заказчиков\Shop.xaml.cs">
+    <Compile Include="Shop.xaml.cs">
       <DependentUpon>Shop.xaml</DependentUpon>
     </Compile>
     <Compile Include="Working.cs" />
-    <Page Include="Window\Для персонала\Appoint.xaml">
+    <Page Include="Appoint.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -143,11 +143,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window\Для заказчиков\FormalizeWin.xaml">
+    <Page Include="FormalizeWin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Window\Для персонала\For_Personal.xaml">
+    <Page Include="For_Personal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -155,7 +155,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window\Главнео окно\MainWindow.xaml">
+    <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -163,11 +163,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Window\Главнео окно\MainWindow.xaml.cs">
+    <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Window\Для заказчиков\Shop.xaml">
+    <Page Include="Shop.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -215,7 +215,11 @@
   <ItemGroup>
     <Resource Include="ImageSource\Назначение_заказа.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Window\Главнео окно\" />
+    <Folder Include="Window\Для заказчиков\" />
+    <Folder Include="Window\Для персонала\" />
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.1">
       <Visible>False</Visible>

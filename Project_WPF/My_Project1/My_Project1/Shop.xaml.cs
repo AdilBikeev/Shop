@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Windows;
-using MySql.Data.MySqlClient;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Windows.Data;
-
+using My_Project1.App_Data;
+using System.Data.Entity;
 
 namespace My_Project1
 {
@@ -21,6 +19,10 @@ namespace My_Project1
         public Shop()
         {
             InitializeComponent();
+
+            ShopEntities2 shop = new ShopEntities2();//созадем экземпляр  модели
+            shop.order.Load();//загружаем информацию с базы данных
+            dgOrderTable.ItemsSource = shop.order;
         }
 
         private string GetTableUseSubj()

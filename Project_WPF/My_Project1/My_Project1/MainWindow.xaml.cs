@@ -53,6 +53,7 @@ namespace My_Project1
             //{
             //    MessageBox.Show(exc.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
             //}
+            
         }
 
         private void btCostumer_Click(object sender, RoutedEventArgs e)
