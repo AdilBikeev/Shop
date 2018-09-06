@@ -63,7 +63,7 @@
                                     <ComboBox.Items>
                                         <TextBlock>Все</TextBlock>
                                         <TextBlock>Программирование</TextBlock>
-                                        <TextBlock>Дискретная матемаитка</TextBlock>
+                                        <TextBlock>Дискретная математика</TextBlock>
                                         <TextBlock>Математический анализ</TextBlock>
                                         <TextBlock>Линейная алгебра</TextBlock>
                                         <TextBlock>Информатика</TextBlock>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using My_Project1.App_Data;
 using System.Data.Entity;
 using System.Linq;
+using System.Windows.Controls;
 
 namespace My_Project1
 {
@@ -66,7 +67,7 @@ namespace My_Project1
         }
 
         public void ShowTableOrder()//выводит таблицу заказов
-        {
+        {  
             if (shop != null)
             {
 
@@ -77,14 +78,15 @@ namespace My_Project1
                 }
 
                 string name_subject = "";
-                for (int i = 0; i < shop.order.Local.Count; i++)//пробегаемся по всем строкам таблицы
+                for (int i = 0; i<shop.order.Local.Count; i++)//пробегаемся по всем строкам таблицы
                 {
 
                     foreach (subject_order item in shop.subject_order)
                     {
                         if (item.Id == shop.order.Local[i].ID_subject)
                         {
-                            if (item.subject == cbSubject.)
+                            TextBlock cbItem = cbSubject.SelectedItem as TextBlock;
+                            if (item.subject == cbItem.Text)
                             {
                                 name_subject = item.subject;
                                 orderCopy.Add(new Order(name_subject, shop.order.Local[i].name_subject, shop.order.Local[i].price, shop.order.Local[i].run_time));
