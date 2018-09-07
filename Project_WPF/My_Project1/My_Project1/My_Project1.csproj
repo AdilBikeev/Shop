@@ -97,7 +97,7 @@
     <Compile Include="Appoint.xaml.cs">
       <DependentUpon>Appoint.xaml</DependentUpon>
     </Compile>
-    <Compile Include="App_Data\fomralize_order.cs">
+    <Compile Include="App_Data\formalize_order.cs">
       <DependentUpon>ModelShop.tt</DependentUpon>
     </Compile>
     <Compile Include="App_Data\ModelShop.Context.cs">

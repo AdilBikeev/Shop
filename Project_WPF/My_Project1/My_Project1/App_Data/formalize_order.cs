@@ -12,15 +12,15 @@ namespace My_Project1.App_Data
     using System;
     using System.Collections.Generic;
     
-    public partial class fomralize_order
+    public partial class formalize_order
     {
         public int Id { get; set; }
         public string name_order { get; set; }
         public string FIO { get; set; }
         public string vk { get; set; }
-        public Nullable<int> phone { get; set; }
         public string comment { get; set; }
         public string working_fio { get; set; }
-        public int progress_order { get; set; }
+        public Nullable<int> progress_order { get; set; }
+        public string phone { get; set; }
     }
 }

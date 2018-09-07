@@ -1,20 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="Хранилище ShopModelContainer" CdmEntityContainer="ShopEntities2">
-    <EntitySetMapping Name="fomralize_order">
-      <EntityTypeMapping TypeName="ShopModel.fomralize_order">
-        <MappingFragment StoreEntitySet="fomralize_order">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="name_order" ColumnName="name order" />
-          <ScalarProperty Name="FIO" ColumnName="FIO" />
-          <ScalarProperty Name="vk" ColumnName="vk" />
-          <ScalarProperty Name="phone" ColumnName="phone" />
-          <ScalarProperty Name="comment" ColumnName="comment" />
-          <ScalarProperty Name="working_fio" ColumnName="working_fio" />
-          <ScalarProperty Name="progress_order" ColumnName="progress_order" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="order">
       <EntityTypeMapping TypeName="ShopModel.order">
         <MappingFragment StoreEntitySet="order">
@@ -31,6 +17,20 @@
         <MappingFragment StoreEntitySet="subject_order">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="subject" ColumnName="subject" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="formalize_orderSet">
+      <EntityTypeMapping TypeName="ShopModel.formalize_order">
+        <MappingFragment StoreEntitySet="formalize_order">
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="vk" ColumnName="vk" />
+          <ScalarProperty Name="progress_order" ColumnName="progress_order" />
+          <ScalarProperty Name="working_fio" ColumnName="working_fio" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="FIO" ColumnName="FIO" />
+          <ScalarProperty Name="name_order" ColumnName="name order" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

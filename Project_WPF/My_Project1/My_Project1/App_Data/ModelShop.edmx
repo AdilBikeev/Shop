@@ -4,8 +4,8 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище ShopModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="fomralize_order">
+    <Schema Namespace="Хранилище ShopModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="formalize_order">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -13,10 +13,10 @@
           <Property Name="name order" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="FIO" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="vk" Type="nvarchar(max)" />
-          <Property Name="phone" Type="int" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" />
           <Property Name="comment" Type="nvarchar(max)" />
           <Property Name="working_fio" Type="nvarchar(max)" />
-          <Property Name="progress_order" Type="int" Nullable="false" />
+          <Property Name="progress_order" Type="int" />
         </EntityType>
         <EntityType Name="order">
           <Key>
@@ -48,7 +48,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="Хранилище ShopModelContainer">
-          <EntitySet Name="fomralize_order" EntityType="Self.fomralize_order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="formalize_order" EntityType="Self.formalize_order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="order" EntityType="Self.order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="subject_order" EntityType="Self.subject_order" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__order__ID_subjec__1367E606" Association="Self.FK__order__ID_subjec__1367E606">
@@ -56,24 +56,10 @@
             <End Role="order" EntitySet="order" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="fomralize_order">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name_order" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="FIO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="vk" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="phone" Type="Int32" />
-          <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="working_fio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="progress_order" Type="Int32" Nullable="false" />
-        </EntityType>
         <EntityType Name="order">
           <Key>
             <PropertyRef Name="Id" />
@@ -106,34 +92,33 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="ShopEntities2" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="fomralize_order" EntityType="Self.fomralize_order" />
           <EntitySet Name="order" EntityType="Self.order" />
           <EntitySet Name="subject_order" EntityType="Self.subject_order" />
           <AssociationSet Name="FK__order__ID_subjec__1367E606" Association="Self.FK__order__ID_subjec__1367E606">
             <End Role="subject_order" EntitySet="subject_order" />
             <End Role="order" EntitySet="order" />
           </AssociationSet>
+          <EntitySet Name="formalize_orderSet" EntityType="ShopModel.formalize_order" />
         </EntityContainer>
+        <EntityType Name="formalize_order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_order" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FIO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="vk" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="working_fio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="progress_order" Type="Int32" />
+          <Property Name="phone" Type="String" Unicode="true" FixedLength="false" MaxLength="50" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Хранилище ShopModelContainer" CdmEntityContainer="ShopEntities2">
-          <EntitySetMapping Name="fomralize_order">
-            <EntityTypeMapping TypeName="ShopModel.fomralize_order">
-              <MappingFragment StoreEntitySet="fomralize_order">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="name_order" ColumnName="name order" />
-                <ScalarProperty Name="FIO" ColumnName="FIO" />
-                <ScalarProperty Name="vk" ColumnName="vk" />
-                <ScalarProperty Name="phone" ColumnName="phone" />
-                <ScalarProperty Name="comment" ColumnName="comment" />
-                <ScalarProperty Name="working_fio" ColumnName="working_fio" />
-                <ScalarProperty Name="progress_order" ColumnName="progress_order" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="order">
             <EntityTypeMapping TypeName="ShopModel.order">
               <MappingFragment StoreEntitySet="order">
@@ -150,6 +135,20 @@
               <MappingFragment StoreEntitySet="subject_order">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="subject" ColumnName="subject" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="formalize_orderSet">
+            <EntityTypeMapping TypeName="ShopModel.formalize_order">
+              <MappingFragment StoreEntitySet="formalize_order">
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="vk" ColumnName="vk" />
+                <ScalarProperty Name="progress_order" ColumnName="progress_order" />
+                <ScalarProperty Name="working_fio" ColumnName="working_fio" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+                <ScalarProperty Name="FIO" ColumnName="FIO" />
+                <ScalarProperty Name="name_order" ColumnName="name order" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

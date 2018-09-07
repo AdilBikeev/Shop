@@ -1,18 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="ShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="fomralize_order">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="name_order" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="FIO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="vk" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="phone" Type="Int32" />
-    <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="working_fio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="progress_order" Type="Int32" Nullable="false" />
-  </EntityType>
   <EntityType Name="order">
     <Key>
       <PropertyRef Name="Id" />
@@ -45,12 +32,25 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="ShopEntities2" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="fomralize_order" EntityType="Self.fomralize_order" />
     <EntitySet Name="order" EntityType="Self.order" />
     <EntitySet Name="subject_order" EntityType="Self.subject_order" />
     <AssociationSet Name="FK__order__ID_subjec__1367E606" Association="Self.FK__order__ID_subjec__1367E606">
       <End Role="subject_order" EntitySet="subject_order" />
       <End Role="order" EntitySet="order" />
     </AssociationSet>
+    <EntitySet Name="formalize_orderSet" EntityType="ShopModel.formalize_order" />
   </EntityContainer>
+  <EntityType Name="formalize_order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name_order" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FIO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="vk" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="working_fio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="progress_order" Type="Int32" />
+    <Property Name="phone" Type="String" Unicode="true" FixedLength="false" MaxLength="50" />
+  </EntityType>
 </Schema>

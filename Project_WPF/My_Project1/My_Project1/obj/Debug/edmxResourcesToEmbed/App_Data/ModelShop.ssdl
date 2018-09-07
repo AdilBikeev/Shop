@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Хранилище ShopModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="fomralize_order">
+  <EntityType Name="formalize_order">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -8,10 +8,10 @@
     <Property Name="name order" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="FIO" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="vk" Type="nvarchar(max)" />
-    <Property Name="phone" Type="int" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" />
     <Property Name="comment" Type="nvarchar(max)" />
     <Property Name="working_fio" Type="nvarchar(max)" />
-    <Property Name="progress_order" Type="int" Nullable="false" />
+    <Property Name="progress_order" Type="int" />
   </EntityType>
   <EntityType Name="order">
     <Key>
@@ -43,7 +43,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="Хранилище ShopModelContainer">
-    <EntitySet Name="fomralize_order" EntityType="Self.fomralize_order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="formalize_order" EntityType="Self.formalize_order" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="order" EntityType="Self.order" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="subject_order" EntityType="Self.subject_order" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__order__ID_subjec__1367E606" Association="Self.FK__order__ID_subjec__1367E606">

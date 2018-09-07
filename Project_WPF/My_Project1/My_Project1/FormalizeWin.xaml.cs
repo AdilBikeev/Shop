@@ -3,6 +3,9 @@ using System.Windows;
 using MySql.Data.MySqlClient;
 using System.Windows.Documents;
 using System.Text.RegularExpressions;
+using My_Project1.App_Data;
+using System.Data.Entity;
+using System.Linq;
 
 namespace My_Project1
 {
@@ -11,9 +14,11 @@ namespace My_Project1
     /// </summary>
     public partial class FormalizeWin : Window
     {
+        ShopEntities2 shop = new ShopEntities2();
         public FormalizeWin()
         {
             InitializeComponent();
+            shop.formalize_orderSet.Load();
         }
 
         private void btFormalize_Click(object sender, RoutedEventArgs e)
@@ -21,29 +26,32 @@ namespace My_Project1
             if(tbPhone_Validate())
                 try
                 {
-                    //TextRange textRange = new TextRange(rtbComment.Document.ContentStart, rtbComment.Document.ContentEnd);
-     
+                    TextRange textRange = new TextRange(rtbComment.Document.ContentStart, rtbComment.Document.ContentEnd);
 
-                    //MySqlConnection conn = new MySqlConnection(My_Project1.Properties.Settings.Default.ConnString);
-                    //conn.Open();
-                    //if (tbFIO.Text == "" && tbVk.Text == "" && tbPhone.Text == "")
-                    //{
-                    //    MessageBox.Show("Заполните хотяб одно из полей ФИО/VK/Телефон, чтобы мы хоть как-то могли с вами связаться", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                    //}
-                    //else
-                    //{
-                    //    MySqlCommand command = new MySqlCommand("INSERT INTO formalize_order (formalize_order.name_order, FIO, vk, phone, comment,progress_order) VALUES (\'" +
-                    //        tbNanmeOrder.Text + "\',\'"
-                    //        + tbFIO.Text + "\',\'"
-                    //        + tbVk.Text + "\',\'"
-                    //        + tbPhone.Text + "\',\'"
-                    //        + textRange.Text+ "\', 0)", conn);
-                    //    command.ExecuteNonQuery();
-                    //    conn.Close();
-                    //    MessageBox.Show("Заказ успешно оформлен !", "Сообщение", MessageBoxButton.OK, MessageBoxImage.Information);
-                    //    this.Close();
-                    //}
-                }catch(Exception exc)
+                    if (tbFIO.Text == "" && tbVk.Text == "" && tbPhone.Text == "")
+                    {
+                        MessageBox.Show("Заполните хотяб одно из полей ФИО/VK/Телефон, чтобы мы хоть как-то могли с вами связаться", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                    else
+                    {
+                        //добавляем в БД
+                        if (tbPhone_Validate())
+                        {
+                            shop.formalize_orderSet.Local.Add(new formalize_order()
+                            {
+                                 comment = textRange.Text,
+                                 FIO = tbFIO.Text,
+                                 name_order = tbNanmeOrder.Text,
+                                 phone = (tbPhone.Text),
+                                 vk = tbVk.Text
+                            });
+                            shop.SaveChanges();
+                            MessageBox.Show("Заказ успешно добавлен. Ожидайте когда с вами свяжутся наши сотрудники", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                        }
+                        
+                    }
+                }
+                catch(Exception exc)
                 {
                     MessageBox.Show(exc.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                 }

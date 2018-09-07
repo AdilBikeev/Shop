@@ -18,60 +18,18 @@ namespace My_Project1
         public bool flag = false;
 
 
-        ShopEntities2 shop;
+        ShopEntities2 shop = new ShopEntities2();//созадем экземпляр  модели;
 
         public Shop()
         {
             InitializeComponent();
-
-            shop = new ShopEntities2();//созадем экземпляр  модели
         }
-
-        private string GetTableUseSubj()
-        {
-            string sql_requests = "SELECT *FROM shop.order";//строка запроса
-            switch (cbSubject.SelectedIndex)
-            {
-                case 0:
-                {
-                    break;
-                }
-                case 1:
-                {
-                    sql_requests += " WHERE ID_subject = 1";
-                    break;
-                }
-                case 2:
-                {
-                    sql_requests += " WHERE ID_subject = 2";
-                    break;
-                }
-                case 3:
-                {
-                    sql_requests += " WHERE ID_subject = 3";
-                    break;
-                }
-                case 4:
-                {
-                    sql_requests += " WHERE ID_subject = 4";
-                    break;
-                }
-                default:
-                {
-                    sql_requests += " WHERE ID_subject = 5";
-                    break;
-                }
-            }
-
-            return sql_requests;
-        }
+        
 
         public void ShowTableOrder()//выводит таблицу заказов
         {  
             if (shop != null)
             {
-
-
                 if (orderCopy.Count != 0)
                 {
                     orderCopy.Clear();
@@ -110,29 +68,32 @@ namespace My_Project1
 
         private void dgOrderTable_Loaded(object sender, RoutedEventArgs e)
         {
-            try
+            if (dgOrderTable.ItemsSource == null)
             {
-                shop.subject_order.Load();
-                shop.order.Load();//загружаем информацию с базы данных
-                string name_subject="";
-                for (int i = 0; i < shop.order.Local.Count; i++)//пробегаемся по всем строкам таблицы
+                try
                 {
-                    foreach(subject_order item in shop.subject_order)
+                    shop.subject_order.Load();
+                    shop.order.Load();//загружаем информацию с базы данных
+                    string name_subject = "";
+                    for (int i = 0; i < shop.order.Local.Count; i++)//пробегаемся по всем строкам таблицы
                     {
-                        if(item.Id == shop.order.Local[i].ID_subject)
+                        foreach (subject_order item in shop.subject_order)
                         {
-                            name_subject = item.subject;
-                            orderCopy.Add(new Order(name_subject, shop.order.Local[i].name_subject, shop.order.Local[i].price, shop.order.Local[i].run_time));
-                            break;
+                            if (item.Id == shop.order.Local[i].ID_subject)
+                            {
+                                name_subject = item.subject;
+                                orderCopy.Add(new Order(name_subject, shop.order.Local[i].name_subject, shop.order.Local[i].price, shop.order.Local[i].run_time));
+                                break;
+                            }
                         }
                     }
+                    dgOrderTable.ItemsSource = orderCopy;
+                    flag = true;
                 }
-                dgOrderTable.ItemsSource = orderCopy;
-                flag = true;
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                catch (Exception exc)
+                {
+                    MessageBox.Show(exc.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
 

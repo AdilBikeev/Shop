@@ -25,8 +25,8 @@ namespace My_Project1.App_Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<fomralize_order> fomralize_order { get; set; }
         public virtual DbSet<order> order { get; set; }
         public virtual DbSet<subject_order> subject_order { get; set; }
+        public virtual DbSet<formalize_order> formalize_orderSet { get; set; }
     }
 }
