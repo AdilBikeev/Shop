@@ -52,5 +52,6 @@
     <Property Name="working_fio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="progress_order" Type="Int32" />
     <Property Name="phone" Type="String" Unicode="true" FixedLength="false" MaxLength="50" />
+    <Property Name="name_subject" Type="String" Nullable="false" />
   </EntityType>
 </Schema>

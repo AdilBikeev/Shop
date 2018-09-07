@@ -12,6 +12,7 @@
     <Property Name="comment" Type="nvarchar(max)" />
     <Property Name="working_fio" Type="nvarchar(max)" />
     <Property Name="progress_order" Type="int" />
+    <Property Name="name subject" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="order">
     <Key>

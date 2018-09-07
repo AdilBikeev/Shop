@@ -59,7 +59,7 @@ namespace My_Project1
             this.run_time = run_time;
         }
 
-        public Order(string name_subject, string name_order, int price, string run_time, string perfomer, string comment, int progress_order)//конструктор для персонала
+        public Order(string name_subject, string name_order, int price, string run_time, string perfomer, string comment, int? progress_order)//конструктор для персонала
         {
             this.name_subject = name_subject;
             this.name_order = name_order;
@@ -67,7 +67,7 @@ namespace My_Project1
             this.run_time = run_time;
             this.perfomer = perfomer;
             this.comment = comment;
-            this.progress_order = progress_order;
+            this.progress_order = progress_order!=null? (int)progress_order:0;
         }
 
         public Order()

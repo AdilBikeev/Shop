@@ -145,6 +145,7 @@ namespace My_Project1
             if (lbPanier.SelectedIndex != -1)
             {
                 FormalizeWin formalize = new FormalizeWin();
+                formalize.NameSubject = painer[lbPanier.SelectedIndex].NAME_SUBJECT;
                 formalize.tbNanmeOrder.Text = painer[lbPanier.SelectedIndex].NAME_ORDER;
                 formalize.tbNanmeOrder.IsEnabled = false;
                 formalize.ShowDialog();

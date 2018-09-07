@@ -12,16 +12,19 @@ namespace My_Project1.App_Data
     using System;
     using System.Collections.Generic;
     
-    public partial class formalize_order
+    public partial class Users_Data
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Users_Data()
+        {
+            this.Personal = new HashSet<Personal>();
+        }
+    
         public int Id { get; set; }
-        public string name_order { get; set; }
-        public string FIO { get; set; }
-        public string vk { get; set; }
-        public string comment { get; set; }
-        public string working_fio { get; set; }
-        public Nullable<int> progress_order { get; set; }
-        public string phone { get; set; }
-        public string name_subject { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Personal> Personal { get; set; }
     }
 }

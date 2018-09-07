@@ -115,11 +115,32 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelShop.edmx</DependentUpon>
     </Compile>
+    <Compile Include="App_Data\MyCompany.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyCompany.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\MyCompany.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyCompany.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\MyCompany.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyCompany.edmx</DependentUpon>
+    </Compile>
     <Compile Include="App_Data\order.cs">
       <DependentUpon>ModelShop.tt</DependentUpon>
     </Compile>
+    <Compile Include="App_Data\Personal.cs">
+      <DependentUpon>MyCompany.tt</DependentUpon>
+    </Compile>
     <Compile Include="App_Data\subject_order.cs">
       <DependentUpon>ModelShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\Users_Data.cs">
+      <DependentUpon>MyCompany.tt</DependentUpon>
     </Compile>
     <Compile Include="FormalizeWin.xaml.cs">
       <DependentUpon>FormalizeWin.xaml</DependentUpon>
@@ -197,6 +218,13 @@
     <None Include="App_Data\ModelShop.edmx.diagram">
       <DependentUpon>ModelShop.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="App_Data\MyCompany.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MyCompany.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App_Data\MyCompany.edmx.diagram">
+      <DependentUpon>MyCompany.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -245,6 +273,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelShop.edmx</DependentUpon>
       <LastGenOutput>ModelShop.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_Data\MyCompany.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MyCompany.edmx</DependentUpon>
+      <LastGenOutput>MyCompany.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_Data\MyCompany.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MyCompany.edmx</DependentUpon>
+      <LastGenOutput>MyCompany.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyCompanyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Personal">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="FIO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ID_COMPANY" Type="Int32" Nullable="false" />
+    <Property Name="SALARY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Users_Data" Relationship="Self.FK__Personal__ID_COM__182C9B23" FromRole="Personal" ToRole="Users_Data" />
+  </EntityType>
+  <EntityType Name="Users_Data">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Personal" Relationship="Self.FK__Personal__ID_COM__182C9B23" FromRole="Users_Data" ToRole="Personal" />
+  </EntityType>
+  <Association Name="FK__Personal__ID_COM__182C9B23">
+    <End Role="Users_Data" Type="Self.Users_Data" Multiplicity="1" />
+    <End Role="Personal" Type="Self.Personal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users_Data">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Personal">
+        <PropertyRef Name="ID_COMPANY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MyCompanyEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Personal" EntityType="Self.Personal" />
+    <EntitySet Name="Users_Data" EntityType="Self.Users_Data" />
+    <AssociationSet Name="FK__Personal__ID_COM__182C9B23" Association="Self.FK__Personal__ID_COM__182C9B23">
+      <End Role="Users_Data" EntitySet="Users_Data" />
+      <End Role="Personal" EntitySet="Personal" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -15,6 +15,7 @@ namespace My_Project1
     public partial class FormalizeWin : Window
     {
         ShopEntities2 shop = new ShopEntities2();
+        public string NameSubject { get; set; }
         public FormalizeWin()
         {
             InitializeComponent();
@@ -42,6 +43,7 @@ namespace My_Project1
                                  comment = textRange.Text,
                                  FIO = tbFIO.Text,
                                  name_order = tbNanmeOrder.Text,
+                                 name_subject = NameSubject,
                                  phone = (tbPhone.Text),
                                  vk = tbVk.Text
                             });

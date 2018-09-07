@@ -2,6 +2,9 @@
 using System.Windows;
 using MySql.Data.MySqlClient;
 using MySql.Data;
+using My_Project1.App_Data;
+using System.Data.Entity;
+using System.Linq;
 
 namespace My_Project1
 {
@@ -10,19 +13,20 @@ namespace My_Project1
     /// </summary>
     public partial class MainWindow : Window
     {
+        MyCompanyEntities myCompany;
+        
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private bool DataRead(MySqlDataReader reader)
+        private bool DataRead()
         {
-            while(reader.Read())
+            foreach(Users_Data item in myCompany.Users_Data.Local)
             {
-                if (reader[1].ToString() == tbLogin.Text)
-                    if (reader[2].ToString() == tbPassword.Password)
+                if (item.Login == tbLogin.Text)
+                    if (item.Password == tbPassword.Password)
                     {
-                        reader.Close();
                         return true;
                     }
             }
@@ -31,29 +35,25 @@ namespace My_Project1
         
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //MySqlConnection conn = new MySqlConnection(My_Project1.Properties.Settings.Default.CoonStringPersonal);
-            //MySqlCommand command = new MySqlCommand("SELECT *FROM user_data", conn);
-            //MySqlDataReader reader;
-            //try
-            //{
-            //    conn.Open();
-            //    reader = command.ExecuteReader();
-            //    if (DataRead(reader))
-            //    {
-            //        MessageBox.Show("Авторизация пройдена успешно !", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Information);
-            //        For_Personal obj = new For_Personal();
-            //        obj.ShowTableOrder();
-            //        obj.Show();
-            //        Close();
-            //    }
-            //    else MessageBox.Show("Неверно введен логин/пароль", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Error);
-            //    conn.Close();
-            //    reader.Close();
-            //}catch(Exception exc)
-            //{
-            //    MessageBox.Show(exc.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-            //}
-            
+            try
+            {//загрыжаем данные из базы данных
+                myCompany = new MyCompanyEntities();
+                myCompany.Users_Data.Load();
+                myCompany.Personal.Load();
+                if (DataRead())
+                {
+                    MessageBox.Show("Авторизация пройдена успешно !", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Information);
+                    For_Personal obj = new For_Personal();
+                    obj.ShowTableOrder();
+                    obj.Show();
+                    Close();
+                }
+                else MessageBox.Show("Неверно введен логин/пароль", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void btCostumer_Click(object sender, RoutedEventArgs e)

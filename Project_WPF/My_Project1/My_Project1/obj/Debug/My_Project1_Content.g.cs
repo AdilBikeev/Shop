@@ -10,5 +10,7 @@
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("app_data/modelshop.context.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("app_data/modelshop.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("app_data/mycompany.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("app_data/mycompany.tt")]
 
 

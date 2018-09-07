@@ -4,6 +4,8 @@ using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Data;
+using My_Project1.App_Data;
+using System.Data.Entity;
 
 namespace My_Project1
 {
@@ -12,8 +14,11 @@ namespace My_Project1
     /// </summary>
     public partial class For_Personal : Window
     {
-        public List<Order> order = new List<Order>();//заказы
+        
+        public List<Order> orderCopy = new List<Order>();//заказы
         public List<Working> workings = new List<Working>();//рабочии
+        MyCompanyEntities myCompany;
+        ShopEntities2 shop;//созадем экземпляр  модели;
 
         public For_Personal()
         {
@@ -52,10 +57,10 @@ namespace My_Project1
 
         public void ShowTableOrder()//выводит таблицу заказов
         {
-            if (order.Count != 0)
-            {
-                order.Clear();
-            }
+            //if (order.Count != 0)
+            //{
+            //    order.Clear();
+            //}
 
             //try
             //{
@@ -95,16 +100,53 @@ namespace My_Project1
         
         }
 
+
+        public void GetInf(out int price,out string run_time, string name_subject, string name_order)//возвращает тематику заказа
+        {
+            price = 0;
+            run_time = "0 часов";
+
+            shop.subject_order.Load();
+            shop.order.Load();
+            for (int i = 0; i < shop.order.Local.Count; i++)//пробегаемся по всем строкам таблицы
+            {
+                foreach (subject_order item in shop.subject_order)//пробегаемся по названиям тематик
+                {
+                    if (item.Id == shop.order.Local[i].ID_subject)
+                    {
+                        price = shop.order.Local[i].price;
+                        run_time = shop.order.Local[i].run_time;
+                        break;
+                    }
+                }
+            }
+        }
         private void dgOrder_Loaded(object sender, RoutedEventArgs e)
         {
-            try
+            if (dgOrder.ItemsSource == null)
             {
-                dgOrder.ItemsSource = null;
-                dgOrder.ItemsSource = order;
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                try
+                {//загружаем информацию с базы данных
+                    myCompany = new MyCompanyEntities();
+                    myCompany.Personal.Load();
+
+                    shop = new ShopEntities2();
+                    shop.formalize_orderSet.Load();
+                    
+                   
+                    foreach (formalize_order item in shop.formalize_orderSet)//пробегаемся по всем заказам
+                    {
+                        int price;
+                        string run_time;
+                        GetInf(out price,  out run_time,item.name_subject,item.name_order);
+                        orderCopy.Add(new Order(item.name_subject, item.name_order,price,run_time,"Не назначен", item.comment, item.progress_order));
+                    }
+                    dgOrder.ItemsSource = orderCopy;
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show(exc.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
 

@@ -17,6 +17,7 @@
           <Property Name="comment" Type="nvarchar(max)" />
           <Property Name="working_fio" Type="nvarchar(max)" />
           <Property Name="progress_order" Type="int" />
+          <Property Name="name subject" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="order">
           <Key>
@@ -112,6 +113,7 @@
           <Property Name="working_fio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="progress_order" Type="Int32" />
           <Property Name="phone" Type="String" Unicode="true" FixedLength="false" MaxLength="50" />
+          <Property Name="name_subject" Type="String" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -141,6 +143,7 @@
           <EntitySetMapping Name="formalize_orderSet">
             <EntityTypeMapping TypeName="ShopModel.formalize_order">
               <MappingFragment StoreEntitySet="formalize_order">
+                <ScalarProperty Name="name_subject" ColumnName="name subject" />
                 <ScalarProperty Name="phone" ColumnName="phone" />
                 <ScalarProperty Name="vk" ColumnName="vk" />
                 <ScalarProperty Name="progress_order" ColumnName="progress_order" />

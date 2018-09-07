@@ -23,6 +23,7 @@
     <EntitySetMapping Name="formalize_orderSet">
       <EntityTypeMapping TypeName="ShopModel.formalize_order">
         <MappingFragment StoreEntitySet="formalize_order">
+          <ScalarProperty Name="name_subject" ColumnName="name subject" />
           <ScalarProperty Name="phone" ColumnName="phone" />
           <ScalarProperty Name="vk" ColumnName="vk" />
           <ScalarProperty Name="progress_order" ColumnName="progress_order" />

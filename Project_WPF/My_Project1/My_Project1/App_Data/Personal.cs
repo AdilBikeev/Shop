@@ -12,16 +12,13 @@ namespace My_Project1.App_Data
     using System;
     using System.Collections.Generic;
     
-    public partial class formalize_order
+    public partial class Personal
     {
         public int Id { get; set; }
-        public string name_order { get; set; }
         public string FIO { get; set; }
-        public string vk { get; set; }
-        public string comment { get; set; }
-        public string working_fio { get; set; }
-        public Nullable<int> progress_order { get; set; }
-        public string phone { get; set; }
-        public string name_subject { get; set; }
+        public int ID_COMPANY { get; set; }
+        public string SALARY { get; set; }
+    
+        public virtual Users_Data Users_Data { get; set; }
     }
 }
