@@ -27,77 +27,53 @@ namespace My_Project1
 
         public void GetItemsWorking(Appoint obj)//получаем список рабочих
         {
-            if (workings.Count != 0)
+            if (workings.Count != 0)//если список рабочих не пуст
             {
-                workings.Clear();
+                workings.Clear();//очищаем этот список для его обновления
             }
 
-            //try
-            //{
-            //    MySqlConnection conn1 = new MySqlConnection(My_Project1.Properties.Settings.Default.CoonStringPersonal);
-            //    conn1.Open();
-
-
-            //    MySqlCommand command1 = new MySqlCommand("SELECT *FROM personal", conn1);
-
-            //    MySqlDataReader reader1 = command1.ExecuteReader();
-            //    while (reader1.Read())
-            //    {
-            //        workings.Add(new Working(reader1[1].ToString()));
-            //        obj.cbWorking.Items.Add(reader1[1].ToString());
-            //    }
-            //    conn1.Close();
-            //    reader1.Close();
-            //}
-            //catch (Exception exc)
-            //{
-            //    MessageBox.Show(exc.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-            //}
+            try
+            {
+                myCompany.Personal.Load();//загрыжаем данные с БД о всех членах компании
+                foreach (Personal item in myCompany.Personal.Local)//пробегаемся по всем членам персонала
+                {
+                    workings.Add(new Working(item.FIO));//добавляем каждого рабочего в List
+                    obj.cbWorking.Items.Add(item.FIO);//и добавляем его в ComboBox для того, чтобы пользователь мог сделать выбор - кому назначить работу
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         public void ShowTableOrder()//выводит таблицу заказов
         {
-            //if (order.Count != 0)
-            //{
-            //    order.Clear();
-            //}
+            if (dgOrder.ItemsSource == null)
+            {
+                try
+                {//загружаем информацию с базы данных
+                    myCompany = new MyCompanyEntities();
+                    myCompany.Personal.Load();
 
-            //try
-            //{
-            //    MySqlConnection conn1 = new MySqlConnection(My_Project1.Properties.Settings.Default.ConnString);//подключаемся к бд shop
-            //    conn1.Open();
-            //    MySqlCommand command1 = new MySqlCommand("SELECT *FROM shop.order WHERE shop.order.name_subject = (SELECT name_order FROM formalize_order)", conn1);
+                    shop = new ShopEntities2();
+                    shop.formalize_orderSet.Load();
 
 
-            //    MySqlConnection conn2 = new MySqlConnection(My_Project1.Properties.Settings.Default.ConnString);//подключаемся к бд shop
-            //    conn2.Open();
-            //    MySqlCommand command2 = new MySqlCommand("SELECT *FROM shop.subject_order", conn2);//берем оттуда тематику заказа, для подстановки ее вместо ID_subject
-
-            //    MySqlConnection conn3 = new MySqlConnection(My_Project1.Properties.Settings.Default.ConnString);//подключаемся к бд shop
-            //    conn3.Open();
-            //    MySqlCommand command3 = new MySqlCommand("SELECT *FROM formalize_order", conn3);//берем оттуда коммент, исполнителя и прогресс заказа
-
-            //    MySqlDataReader reader1 = command1.ExecuteReader();
-            //    while (reader1.Read())
-            //    {
-            //        MySqlDataReader reader2 = command2.ExecuteReader();
-            //        while (reader2.Read()) if (reader2[0].ToString() == reader1[2].ToString()) break;//поиск тематики по ключ ID
-
-            //        MySqlDataReader reader3 = command3.ExecuteReader();
-            //        while (reader3.Read()) if (reader3[1].ToString() == reader1[1].ToString()) break;//если название заказа совпадает
-            //        order.Add(new Order(reader2[1].ToString(), reader1[1].ToString(), (int)reader1[3], reader1[4].ToString(),reader3[6].ToString(), reader3[5].ToString(), Convert.ToInt32(reader3[7]) ));
-            //        reader2.Close();
-            //        reader3.Close();
-            //    }
-            //    conn1.Close();
-            //    conn2.Close();
-            //    conn3.Close();
-            //    reader1.Close();
-            //}
-            //catch (Exception exc)
-            //{
-            //    MessageBox.Show(exc.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-        
+                    foreach (formalize_order item in shop.formalize_orderSet)//пробегаемся по всем заказам
+                    {
+                        int price;
+                        string run_time;
+                        GetInf(out price, out run_time, item.name_subject, item.name_order);
+                        orderCopy.Add(new Order(item.name_subject, item.name_order, price, run_time, item.working_fio, item.comment, item.progress_order));
+                    }
+                    dgOrder.ItemsSource = orderCopy;
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show(exc.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
         }
 
 
@@ -123,31 +99,7 @@ namespace My_Project1
         }
         private void dgOrder_Loaded(object sender, RoutedEventArgs e)
         {
-            if (dgOrder.ItemsSource == null)
-            {
-                try
-                {//загружаем информацию с базы данных
-                    myCompany = new MyCompanyEntities();
-                    myCompany.Personal.Load();
-
-                    shop = new ShopEntities2();
-                    shop.formalize_orderSet.Load();
-                    
-                   
-                    foreach (formalize_order item in shop.formalize_orderSet)//пробегаемся по всем заказам
-                    {
-                        int price;
-                        string run_time;
-                        GetInf(out price,  out run_time,item.name_subject,item.name_order);
-                        orderCopy.Add(new Order(item.name_subject, item.name_order,price,run_time,"Не назначен", item.comment, item.progress_order));
-                    }
-                    dgOrder.ItemsSource = orderCopy;
-                }
-                catch (Exception exc)
-                {
-                    MessageBox.Show(exc.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
+            ShowTableOrder();
         }
 
         private void dgOrder_MouseUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -155,9 +107,15 @@ namespace My_Project1
             try
             {
                 Appoint obj = new Appoint();
-                obj.tbNameOrder.Text = (dgOrder.Items[dgOrder.SelectedIndex] as Order).NAME_ORDER;
+                obj.tbNameOrder.Text = (dgOrder.Items[dgOrder.SelectedIndex] as Order).NAME_ORDER;//запомнинаем тематику заказа
                 GetItemsWorking(obj);
                 obj.ShowDialog();
+
+                if (orderCopy.Count != 0)
+                {
+                    orderCopy.Clear();
+                }
+
                 ShowTableOrder();
                 dgOrder_Loaded(sender, e);
             }

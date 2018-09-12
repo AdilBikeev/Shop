@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using System.Windows;
+using System.Collections.Generic;
+using My_Project1.App_Data;
+using System.Data.Entity;
 using MySql.Data.MySqlClient;
 
 namespace My_Project1
@@ -10,6 +13,9 @@ namespace My_Project1
     /// </summary>
     public partial class Appoint : Window
     {
+        MyCompanyEntities myCompany = new MyCompanyEntities();
+        ShopEntities2 shop = new ShopEntities2();
+
         public Appoint()
         {
             InitializeComponent();
@@ -22,23 +28,33 @@ namespace My_Project1
             {
                 if (cbWorking.Text != ""&&tbSalary.Text!=""&& reg.IsMatch(tbSalary.Text)==true)
                 {
-                    //MySqlConnection conn1 = new MySqlConnection(My_Project1.Properties.Settings.Default.ConnString);//открываем бд shop
-                    //conn1.Open();
-                    ////указываем в базе, кто будет исполнителем заказа
-                    //MySqlCommand command1 = new MySqlCommand("UPDATE formalize_order  SET working_fio =\'" + cbWorking.Text + "\' WHERE shop.formalize_order.name_order = \'" + tbNameOrder.Text + "\'", conn1);
-                    //command1.ExecuteReader();
-                    //conn1.Close();
+                    shop.formalize_orderSet.Load();//загружаем из БД в List информацию о незакоченных заказах
+                    foreach(formalize_order item in shop.formalize_orderSet)//пробегаемся по всех незавершенным заказам
+                    {
+                        if(item.name_order == tbNameOrder.Text)//находим выбранным заказ
+                        {
+                            item.working_fio = cbWorking.Text;//устанавливаем назначенного пользователем рабочего
+                            break;
+                        }
+                    }
 
+                    
+                    myCompany.Personal.Load();//загружаем информацию о каждом члене персонала из БД
+                    foreach(Personal item in myCompany.Personal)//перебираем рабочих
+                    {
+                        if(item.FIO == cbWorking.Text)//если ФИО рабочего совпадает с выбранным пользователем
+                        {
+                            item.SALARY = tbSalary.Text;//устанавливаем для него зарплату за данный заказ
+                            break;
+                        }
+                    }
 
-                    //MySqlConnection conn2 = new MySqlConnection(My_Project1.Properties.Settings.Default.CoonStringPersonal);//открываем бд my_company
-                    //conn2.Open();
-                    ////указываем в базе, что данный рабочий будет уже занят
-                    //MySqlCommand command2 = new MySqlCommand("UPDATE personal SET  salary = \'" + tbSalary.Text +"\' WHERE FIO = \'" + cbWorking.Text + "\'", conn2);
-                    //command2.ExecuteReader();
-                    //conn2.Close();
+                    //сохраняем изменения
+                    shop.SaveChanges();
+                    myCompany.SaveChanges();
 
-                    //MessageBox.Show("Заказ успешно назначен рабочему " + cbWorking.Text, "Сообщение", MessageBoxButton.OK, MessageBoxImage.Information);
-                    //this.Close();
+                    MessageBox.Show("Заказ успешно назначен рабочему " + cbWorking.Text, "Сообщение", MessageBoxButton.OK, MessageBoxImage.Information);
+                    Close();
                 }
                 else
                 {
